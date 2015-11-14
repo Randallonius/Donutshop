@@ -6,7 +6,7 @@
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
     <title>PDX Donuts</title>
 <script>
-var donutShop = function (shopName, minCust, maxCust, avgDon, hrsOp, dayCust, donDay) {
+var donutShop = function (shopName, minCust, maxCust, avgDon, hrsOp) {
   this.shopName = shopName;
   this.minCust = minCust;
   this.maxCust = maxCust;
@@ -14,7 +14,7 @@ var donutShop = function (shopName, minCust, maxCust, avgDon, hrsOp, dayCust, do
   this.hrsOp = hrsOp;
   var customersPerDay = (Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust) * this.hrsOp;
   this.dayCust = customersPerDay;
-  var donutPerDay = Math.ceil(this.dayCust * this.avgDon);
+  var donutPerDay = Math.floor(this.dayCust * this.avgDon);
   this.donDay = donutPerDay;
   console.log(customersPerDay);
 }
