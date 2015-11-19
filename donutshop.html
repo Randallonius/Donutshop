@@ -28,9 +28,7 @@ var donutShop = function (shopName, minCust, maxCust, avgDon, hrsOp) {
     var   tableRow = "<tr><td>"+this.minCust+"</td>";
           tableRow += "<td>"+this.maxCust+"</td>";
           tableRow += "<td>"+this.avgDon+"</td>";
-          /*tableRow += "<td>"+this.hrsOp+"</td>";
-          tableRow += "<td>"+this.dayCust+"</td>";
-          tableRow += "<td>"+this.dayDonut+"</td>*/"</tr>";
+          "</tr>";
           return tableRow;
     }
 }
@@ -49,10 +47,29 @@ var donut = new Array();
     <h2>of PDX</h2>
   </div>
   <body>
-    <section>
+    <div id="title">
     <h1>Portland's finest Donut Shops</h1>
+  </div>
+      <form>
+        <p>Choose your tasty donut:</p>
+      <select name="donutshopselect" id="donutshopselect" onchange="showShop(this.value)">
+        <option value="">Donut Shops</option>
+        <option value="0">Voodoo Donuts</option>
+        <option value="1">Blue Star Donuts</option>
+        <option value="2">Coco</option>
+        <option value="3">Tonallis Donuts</option>
+        <option value="4">Sesame Donuts</option>
+      </select>
+    </form>
+  <section id="donutshops">
+    <script>
+    showShop = function showShop(shopID) {
+     document.getElementById('shop_'+shopID).setAttribute("class","show");
+   }
+    </script>
         <script type="text/javascript"> //JavaScript for table
   for (var index = 0; index < donut.length; index++) {
+      document.write("<div id='shop_"+index+"'>");
       document.write("<h2>"+donut[index].shopName+"</h2>")
       document.write("<table>");
       document.write("<tr>");
@@ -81,8 +98,13 @@ var donut = new Array();
       document.write("<th>"+totCust+"</th>");
       document.write("<th>"+totDon+"</th>");
       document.write("</table>");
+      document.write("</div>");
 }
+
 </script>
     </section>
+    <footer>
+      &copy; Jonathan Randall 2015
+    </footer>
   </body>
 </html>

@@ -9,7 +9,7 @@ header {
   height: 100px;
 }
 
-section h1 {
+#title h1 {
   text-align: center;
   font-family: 'Josefin Slab', serif;
   font-weight: bold;
@@ -39,7 +39,8 @@ table {
   padding: 10px 15px 15px;
 }
 th {
-  background-color: #EEE; width: 200px;
+  background-color: #3B3738; width: 200px;
+  color: #FDF3E7;
   font-family: 'Poiret One', cursive;
 }
 
@@ -74,6 +75,28 @@ td {
   color: #FDF3E7;
   margin-top: -20px;
   text-decoration: underline;
+}
+
+#donutshops div {
+  display: none;
+}
+
+#donutshops .show {
+  display: block;
+}
+
+form {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 90px;
+  width: 300px;
+  background-color: #fff;
+  border: 10px solid #7E8F7C;
+  padding: 15px 15px 15px;
+}
+
+select {
+  margin-right: 15px;
 }
 
 footer {
