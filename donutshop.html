@@ -1,110 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="donutshop.css">
+    <link rel="stylesheet" type="text/css" href="donuttest.css">
     <link href='https://fonts.googleapis.com/css?family=Lobster|Josefin+Slab:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <script src="shop.js"></script>
+    <script src="donut_table.js"></script>
+
     <title>PDX Donuts</title>
-<script>
-var donutShop = function (shopName, minCust, maxCust, avgDon, hrsOp) {
-  this.shopName = shopName;
-  this.minCust = minCust;
-  this.maxCust = maxCust;
-  this.avgDon = avgDon;
-  this.hrsOp = hrsOp;
-  this.totCust = 0;
-  this.hours = new Array ();
-  this.customersPerHour = new Array ();
-  this.donutPerHour = new Array ();
-
-    for (var index = 0; index < this.hrsOp; index++) {
-      this.hours.push(index);
-      this.customersPerHour.push(Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust);
-      this.donutPerHour.push(Math.floor(this.customersPerHour[index] * this.avgDon));
-
-    }
-
-  this.writeTableData = function() {
-    var   tableRow = "<tr><td>"+this.minCust+"</td>";
-          tableRow += "<td>"+this.maxCust+"</td>";
-          tableRow += "<td>"+this.avgDon+"</td>";
-          "</tr>";
-          return tableRow;
-    }
-}
-var donut = new Array();
-  donut.push(new donutShop("Voodoo Donuts", 4, 37, 2, 24));
-  donut.push(new donutShop("Blue Star Donuts", 8, 43, 4.5, 11));
-  donut.push(new donutShop("Coco", 9, 23, 6.33, 11));
-  donut.push(new donutShop("Tonallis Donuts & Cream", 2, 28, 1.25, 17));
-  donut.push(new donutShop("Sesame Donuts", 8, 58, 3.75, 24));
-</script>
   </head>
-  <header>
-  </header>
-    <div id="logo">
-    <h1>Donuts</h1>
-    <h2>of PDX</h2>
-  </div>
   <body>
+    <header>
+    </header>
+    <div id="logo">
+      <h1>Donuts</h1>
+      <h2>of PDX</h2>
+    </div>
     <div id="title">
-    <h1>Portland's finest Donut Shops</h1>
-  </div>
-      <form>
-        <p>Choose your tasty donut:</p>
-      <select name="donutshopselect" id="donutshopselect" onchange="showShop(this.value)">
-        <option value="">Donut Shops</option>
-        <option value="0">Voodoo Donuts</option>
-        <option value="1">Blue Star Donuts</option>
-        <option value="2">Coco</option>
-        <option value="3">Tonallis Donuts</option>
-        <option value="4">Sesame Donuts</option>
-      </select>
-    </form>
-  <section id="donutshops">
-    <script>
-    showShop = function showShop(shopID) {
-     document.getElementById('shop_'+shopID).setAttribute("class","show");
-   }
-    </script>
-        <script type="text/javascript"> //JavaScript for table
-  for (var index = 0; index < donut.length; index++) {
-      document.write("<div id='shop_"+index+"'>");
-      document.write("<h2>"+donut[index].shopName+"</h2>")
-      document.write("<table>");
-      document.write("<tr>");
-      document.write("<th>Minimum Customers/Hour</th>");
-      document.write("<th>Maximum Customers/Hour</th>");
-      document.write("<th>Average Donuts/Customer</th>");
-      document.write("</tr>");
-      document.write(donut[index].writeTableData());
-      document.write("<tr>");
-      document.write("<th>Hours</th>")
-      document.write("<th>Customer/Hour</th>")
-      document.write("<th>Donuts needed</th>")
-      var totCust = 0;
-      var totDon = 0;
-      for (var hrsOp = 0; hrsOp < donut[index].hours.length; hrsOp++){
-        donut[index].hours[hrsOp] = hrsOp + 1;
-        document.write("<tr><td>"+donut[index].hours[hrsOp]+"</td>");
-        document.write("<td>"+donut[index].customersPerHour[hrsOp]+"</td>");
-        document.write("<td>"+donut[index].donutPerHour[hrsOp]+"</td></tr>");
-        totCust += donut[index].customersPerHour[hrsOp];
-        totDon += donut[index].donutPerHour[hrsOp];
-      document.write("<tr>");
-      }
-      document.write("<tr>");
-      document.write("<th>Totals for the day:</th>");
-      document.write("<th>"+totCust+"</th>");
-      document.write("<th>"+totDon+"</th>");
-      document.write("</table>");
-      document.write("</div>");
-}
-
-</script>
-    </section>
-    <footer>
-      &copy; Jonathan Randall 2015
-    </footer>
+      <h1>Portland's finest Donut Shops</h1>
+      </div>
+          <form>
+            <p>Choose your tasty donut:</p>
+          <select name="donutshopselect" id="donutshopselect">
+            <option value="">- Donut Shops -</option>
+            <option value="0">Voodoo Donuts</option>
+            <option value="1">Blue Star Donuts</option>
+            <option value="2">Coco</option>
+            <option value="3">Tonallis Donuts</option>
+            <option value="4">Sesame Donuts</option>
+          </select>
+        </form>
+        <section id="donutshops"></section>
   </body>
 </html>
