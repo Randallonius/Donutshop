@@ -5,13 +5,12 @@ var donutShop = function (shopName, minCust, maxCust, avgDon, hrsOp) {
   this.avgDon = avgDon;
   this.hrsOp = hrsOp;
   this.totCust = 0;
-  this.hours = new Array ();
-  this.customersPerHour = new Array ();
-  this.donutPerHour = new Array ();
-  this.totCust = 0;
   this.totDon = 0;
   this.currentIndex = 0;
   this.generateData = function() {
+    this.hours = new Array ();
+    this.customersPerHour = new Array ();
+    this.donutPerHour = new Array ();
     for (var index = 0; index < this.hrsOp; index++) {
       this.hours.push(index);
       this.customersPerHour.push(Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust);
