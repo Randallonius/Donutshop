@@ -26,4 +26,5 @@ function buildTable() {
 function updateShop() {
 selectedShop[this.id] = parseFloat(this.value);
 buildTable();
+chart.render();
 }

@@ -6,6 +6,8 @@
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
     <script src="shop.js"></script>
     <script src="donut_table.js"></script>
+    <script type= "text/javascript" src="canvasjs.min.js"></script>
+    <script src="chart.js"></script>
 
     <title>PDX Donuts</title>
   </head>
@@ -16,20 +18,22 @@
       <h1>Donuts</h1>
       <h2>of PDX</h2>
     </div>
-    <div id="title">
-      <h1>Portland's finest Donut Shops</h1>
-      </div>
-          <form>
-            <p>Choose your tasty donut:</p>
-          <select name="donutshopselect" id="donutshopselect">
-            <option value="">- Donut Shops -</option>
-            <option value="0">Voodoo Donuts</option>
-            <option value="1">Blue Star Donuts</option>
-            <option value="2">Coco</option>
-            <option value="3">Tonallis Donuts</option>
-            <option value="4">Sesame Donuts</option>
-          </select>
-        </form>
+      <div id="title">
+        <h1>Portland's finest Donut Shops</h1>
+        </div>
+        <div id="chartContainer">
+        </div>
+            <form>
+              <p>Choose your tasty donut:</p>
+            <select name="donutshopselect" id="donutshopselect">
+              <option value="">- Donut Shops -</option>
+              <option value="0">Voodoo Donuts</option>
+              <option value="1">Blue Star Donuts</option>
+              <option value="2">Coco</option>
+              <option value="3">Tonallis Donuts</option>
+              <option value="4">Sesame Donuts</option>
+            </select>
+          </form>
         <section id="donutshops"></section>
   </body>
 </html>

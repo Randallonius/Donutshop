@@ -4,13 +4,17 @@ var donutShop = function (shopName, minCust, maxCust, avgDon, hrsOp) {
   this.maxCust = maxCust;
   this.avgDon = avgDon;
   this.hrsOp = hrsOp;
-  this.totCust = 0;
-  this.totDon = 0;
   this.currentIndex = 0;
+  this.label = shopName;
+  this.y =0;
+
   this.generateData = function() {
     this.hours = new Array ();
     this.customersPerHour = new Array ();
     this.donutPerHour = new Array ();
+    this.totCust = 0;
+    this.totDon = 0;
+    
     for (var index = 0; index < this.hrsOp; index++) {
       this.hours.push(index);
       this.customersPerHour.push(Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust);
@@ -18,6 +22,7 @@ var donutShop = function (shopName, minCust, maxCust, avgDon, hrsOp) {
       this.totCust += this.customersPerHour[index];
       this.totDon += this.donutPerHour[index];
     }
+    this.y = this.totCust;
 }
 
   this.writeTableData = function() {//Creates the table
@@ -41,9 +46,13 @@ var donutShop = function (shopName, minCust, maxCust, avgDon, hrsOp) {
           return tableRow;
     }
   }
-var donut = new Array();
+var donut = new Array{};
   donut.push(new donutShop("Voodoo Donuts", 4, 37, 2, 24));
   donut.push(new donutShop("Blue Star Donuts", 8, 43, 4.5, 11));
   donut.push(new donutShop("Coco", 9, 23, 6.33, 11));
   donut.push(new donutShop("Tonallis Donuts & Cream", 2, 28, 1.25, 17));
   donut.push(new donutShop("Sesame Donuts", 8, 58, 3.75, 24));
+
+    for (var index = 0; index < donut.length; index++) {
+      donut[index].generateData();
+    }
