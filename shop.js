@@ -14,7 +14,7 @@ var donutShop = function (shopName, minCust, maxCust, avgDon, hrsOp) {
     this.donutPerHour = new Array ();
     this.totCust = 0;
     this.totDon = 0;
-    
+
     for (var index = 0; index < this.hrsOp; index++) {
       this.hours.push(index);
       this.customersPerHour.push(Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust);
@@ -45,8 +45,8 @@ var donutShop = function (shopName, minCust, maxCust, avgDon, hrsOp) {
           tableRow +=  "<th>"+this.totDon+"</th>";
           return tableRow;
     }
-  }
-var donut = new Array{};
+
+var donut = new Array();
   donut.push(new donutShop("Voodoo Donuts", 4, 37, 2, 24));
   donut.push(new donutShop("Blue Star Donuts", 8, 43, 4.5, 11));
   donut.push(new donutShop("Coco", 9, 23, 6.33, 11));
